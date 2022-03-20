@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<head>
-    <title>DOM Manipulation</title>
-</head>
-<body>
-    <script>
-        function addItem() {
-            var li = document.createElement('li');
-            var content = document.querySelector('input#content');  // ToDo2.2
-            li.innerHTML = content.value;                           // ToDo2.2
+<html>
+    <head>
+        <title>DOM Manipulation</title>
+    </head>
+    <body>
+        <script>
+            function addItem() {
+                var li = document.createElement('li');
+                var content = document.querySelector('input#content');  // ToDo2.2
+                li.innerHTML = content.value;                           // ToDo2.2
+                
+                var target = document.querySelector('ol#response');
+                target.appendChild(li);
+            }
             
-            var target = document.querySelector('ol#response');
-            target.appendChild(li);
-        }
+            // ToDo1
+            function clearPage() {
+                var target = document.querySelector('ol#response');
+                target.innerHTML = '';
+            }
+        </script>
+
+        <input type="text" id="content" value="ANOTHER item">  <!-- ToDo2.2 -->
+        <button onclick="addItem()">Add Item</button>          <!-- ToDo2.1 -->
+        <button onclick="clearPage()">Clear Page</button>      <!-- ToDo1 -->
         
-        // ToDo1
-        function clearPage() {
-            var target = document.querySelector('ol#response');
-            target.innerHTML = '';
-        }
-    </script>
+        <ol id="response">
+            <li>This is an item.</li>
+        </ol>
 
-    <input type="text" id="content" value="ANOTHER item">  <!-- ToDo2.2 -->
-    <button onclick="addItem()">Add Item</button>          <!-- ToDo2.1 -->
-    <button onclick="clearPage()">Clear Page</button>      <!-- ToDo1 -->
-    
-    <ol id="response">
-        <li>This is an item.</li>
-    </ol>
-
-</body>
+    </body>
 </html>

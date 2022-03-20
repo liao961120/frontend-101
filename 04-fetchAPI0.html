@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<head>
-    <title>Fetch API</title>
-</head>
-<body>
-    <script>
-        // Fetch API
-        function fetchData() {
-            var url = 'https://jsonplaceholder.typicode.com/posts/1/comments';
+<html>
+    <head>
+        <title>Fetch API</title>
+    </head>
+    <body>
+        <script>
+            // Fetch API
+            function fetchData() {
+                var url = 'https://jsonplaceholder.typicode.com/posts/1/comments';
 
-            fetch(url).then(response => {
-                return response.json();
-            }).then(data => {
-                console.log(data);
-            })
-        }
+                fetch(url).then(response => {
+                    return response.json();
+                }).then(data => {
+                    console.log(data);
+                })
+            }
 
 
-        function clearPage() {
-            var target = document.querySelector('ol#response');
-            target.innerHTML = '';
-        }
-    </script>
+            // ToDo1: buildResponse(data)
 
-    <!-- ToDo: input postId -->
-    <br>
-    <button onclick="fetchData()">Fetch Data</button>
-    <button onclick="clearPage()">Clear Page</button>
 
-    <ol id="response"></ol>
+            function clearPage() {
+                var target = document.querySelector('ol#response');
+                target.innerHTML = '';
+            }
+        </script>
 
-</body>
+        <!-- ToDo2: input postId -->
+        <button onclick="fetchData()">Fetch Data</button>
+        <button onclick="clearPage()">Clear Page</button>
+
+        <ol id="response"></ol>
+
+    </body>
 </html>
