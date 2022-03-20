@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>DOM Manipulation</title>
+</head>
+<body>
+    <script>
+        // Demo (console): 
+        //   querySelector() -> ol.innerHTML -> createElement() -> 
+        //   appendChild()
+        function addItem() {
+            var li = document.createElement('li');
+            li.innerHTML = 'ANOTHER item!';
+
+            var target = document.querySelector('ol#response');
+            target.appendChild(li);
+        }
+
+        // ToDo1: clearPage() -> <button onclick="clearPage()">
+
+        // ToDo2: <button onclick="addItem()">  ->  <input id="content">  ->
+        //        addItem: querySelector('input#content')
+    </script>
+    
+    <ol id="response">
+        <li>This is item one.</li>
+    </ol>
+</body>
+</html>
