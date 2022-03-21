@@ -4,6 +4,11 @@
         <title>DOM Manipulation</title>
     </head>
     <body>
+        <ol id="response">
+            <li>This is item one.</li>
+        </ol>
+
+        
         <script>
             // Demo (console): 
             //   querySelector() -> ol.innerHTML -> createElement() -> 
@@ -16,15 +21,11 @@
                 target.appendChild(li);
             }
 
-            // ToDo1: clearPage() -> <button onclick="clearPage()">
+            // ToDo1: clearPage() -> addEventListener: <button id="clear-page">
 
-            // ToDo2: <button onclick="addItem()">  ->
+            // ToDo2: addEventListener: <button id="add-item">  ->
             //        <input id="content">  ->
             //        addItem(): querySelector('input#content')
         </script>
-        
-        <ol id="response">
-            <li>This is item one.</li>
-        </ol>
     </body>
 </html>

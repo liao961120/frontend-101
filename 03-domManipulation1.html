@@ -4,6 +4,15 @@
         <title>DOM Manipulation</title>
     </head>
     <body>
+        <input type="text" id="content" value="ANOTHER item">  <!-- ToDo2.2 -->
+        <button id="add-item">Add Item</button>          <!-- ToDo2.1 -->
+        <button id="clear-page">Clear Page</button>      <!-- ToDo1 -->
+        
+        <ol id="response">
+            <li>This is an item.</li>
+        </ol>
+
+
         <script>
             function addItem() {
                 var li = document.createElement('li');
@@ -19,15 +28,16 @@
                 var target = document.querySelector('ol#response');
                 target.innerHTML = '';
             }
-        </script>
 
-        <input type="text" id="content" value="ANOTHER item">  <!-- ToDo2.2 -->
-        <button onclick="addItem()">Add Item</button>          <!-- ToDo2.1 -->
-        <button onclick="clearPage()">Clear Page</button>      <!-- ToDo1 -->
-        
-        <ol id="response">
-            <li>This is an item.</li>
-        </ol>
+            
+            // Listen to mouse click event
+            document.querySelector('#add-item').addEventListener(
+                "click", addItem
+            );
+            document.querySelector('#clear-page').addEventListener(
+                "click", clearPage
+            )
+        </script>
 
     </body>
 </html>

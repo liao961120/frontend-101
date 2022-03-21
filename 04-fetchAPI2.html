@@ -4,6 +4,13 @@
         <title>Fetch API</title>
     </head>
     <body>
+        <input type="text" id="postId" value="1">
+        <button onclick="fetchData()">Fetch Data</button>
+        <button onclick="clearPage()">Clear Page</button>
+
+        <ol id="response"></ol>
+
+
         <script>
             // Fetch API
             // https://www.youtube.com/watch?v=drK6mdA9d_M
@@ -33,18 +40,20 @@
                 }
             }
 
-
+            
             function clearPage() {
                 var target = document.querySelector('ol#response');
                 target.innerHTML = '';
             }
+
+            // Listen to mouse click event
+            document.querySelector('#fetch-data').addEventListener(
+                "click", fetchData
+            )
+            document.querySelector('#clear-page').addEventListener(
+                "click", clearPage
+            )
         </script>
-
-        <input type="text" id="postId" value="1">
-        <button onclick="fetchData()">Fetch Data</button>
-        <button onclick="clearPage()">Clear Page</button>
-
-        <ol id="response"></ol>
 
     </body>
 </html>
